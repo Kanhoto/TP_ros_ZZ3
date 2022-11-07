@@ -1,0 +1,2 @@
+convert_odom_to_tf:tp_0
+-DCATKIN_DEVEL_PREFIX=/home/local.isima.fr/vicanhotod/ws_tp0/devel -DCMAKE_INSTALL_PREFIX=/home/local.isima.fr/vicanhotod/ws_tp0/install -G Unix Makefiles

@@ -1,0 +1,13 @@
+# Target labels
+ GMock
+# Source files and their labels
+/home/local.isima.fr/vicanhotod/ws_tp1/build/CMakeFiles/GMock
+/home/local.isima.fr/vicanhotod/ws_tp1/build/CMakeFiles/GMock.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/CMakeFiles/GMock-complete.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-install.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-mkdir.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-download.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-update.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-patch.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-configure.rule
+/home/local.isima.fr/vicanhotod/ws_tp1/build/GMock-prefix/src/GMock-stamp/GMock-build.rule

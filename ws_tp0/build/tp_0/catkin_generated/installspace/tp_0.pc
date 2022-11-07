@@ -1,0 +1,8 @@
+prefix=/home/local.isima.fr/vicanhotod/ws_tp0/install
+
+Name: tp_0
+Description: Description of tp_0
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
