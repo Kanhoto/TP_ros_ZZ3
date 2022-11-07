@@ -1,0 +1,5 @@
+<launch>
+    <param name ="/use_sim_time" value="true"/>
+    <node name="rosbag_play" pkg="rosbag" type="play" args="--clock $(find tp_2)/bag/rtk_vs_natural.bag" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tp_2)/rviz/config.rviz" />
+</launch>

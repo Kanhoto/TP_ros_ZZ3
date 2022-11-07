@@ -1,2 +1,0 @@
-
--DCATKIN_DEVEL_PREFIX=/home/local.isima.fr/vicanhotod/ws_tp1/devel -DCMAKE_INSTALL_PREFIX=/home/local.isima.fr/vicanhotod/ws_tp1/install -G Unix Makefiles
