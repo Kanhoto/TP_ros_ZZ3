@@ -1,5 +1,54 @@
 <launch>
     <param name ="/use_sim_time" value="true"/>
     <node name="rosbag_play" pkg="rosbag" type="play" args="--clock $(find tp_2)/bag/rtk_vs_natural.bag" />
+    
+    <node name="pavin_drawing" type="pavin_drawing" pkg="pavin_drawing">
+        <param name="dir_pavin_map" type="string" value="$(find pavin_drawing)/map" />
+        <rosparam file="$(find pavin_drawing)/map/config/projection_pavin.yaml" command="load"/>
+        <rosparam file="$(find pavin_drawing)/config/pavin_color.yaml"/>
+    </node>
+
+    <!-- GPS naturel -->
+    <group ns="naturel">
+        <node pkg="gps_nmea" type="gps_nmea_parser" name="parser">
+            <param name="parser_type" type="string" value="enabled" />
+            <param name="soft_error_catching" type="bool" value="false" />
+            <param name="special_zmax_parsing" type="bool" value="false"/>
+
+            <remap from="/naturel/gps_sentence" to="/gps_nmea_natural/gps_sentence"/>
+        </node>
+
+        <node pkg="gps_nmea" type="gps_nmea_projection" name="projection">
+            <rosparam command="load" file="$(find gps_nmea)/config/projection.yaml" />
+            <param name="planar_type" type="string" value="geolocal" />
+            <param name="publish_odom" type="bool" value="true" />
+            <param name="publish_point_stamped" type="bool" value="true" />
+        </node>
+    </group>
+
+    <!-- GPS RTK -->
+    <group ns="RTK">
+        <node pkg="gps_nmea" type="gps_nmea_parser" name="parser">
+            <param name="parser_type" type="string" value="enabled" />
+            <param name="soft_error_catching" type="bool" value="false" />
+            <param name="special_zmax_parsing" type="bool" value="false"/>
+
+            <remap from="/RTK/gps_sentence" to="/gps_nmea_rtk/gps_sentence"/>
+        </node>
+
+        <node pkg="gps_nmea" type="gps_nmea_projection" name="projection">
+            <rosparam command="load" file="$(find gps_nmea)/config/projection.yaml" />
+            <param name="planar_type" type="string" value="geolocal" />
+            <param name="publish_odom" type="bool" value="true" />
+            <param name="publish_point_stamped" type="bool" value="true" />
+        </node>
+    </group>
+
+    <node pkg="tp_2" type="tp_2" name="fusion">
+        <remap from="odometry_in" to="/effibote4/odometry"/>
+        <remap from="gps_rtk_in" to="/RTK/gps_planar"/>
+        <remap from="gps_nat_in" to="/naturel/gps_planar"/>
+    </node>
+
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tp_2)/rviz/config.rviz" />
 </launch>
