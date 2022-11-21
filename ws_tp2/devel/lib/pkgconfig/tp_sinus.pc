@@ -1,0 +1,8 @@
+prefix=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp2/devel
+
+Name: tp_sinus
+Description: Description of tp_sinus
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

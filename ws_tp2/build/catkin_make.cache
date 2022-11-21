@@ -1,0 +1,2 @@
+tp_msgs:tp_sinus
+-DCATKIN_DEVEL_PREFIX=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp2/devel -DCMAKE_INSTALL_PREFIX=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp2/install -G Unix Makefiles

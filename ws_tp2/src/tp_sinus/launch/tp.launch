@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="tp_sinus" type="tp_sinus_node" name="publish_sinus"/>
+    <node pkg="tp_sinus" type="Converter_node" name="converter" output="screen"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tp_sinus)/rviz/config.rviz" />
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp2/install
+
+Name: tp_msgs
+Description: Description of tp_msgs
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
