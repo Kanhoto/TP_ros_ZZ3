@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name="e4">
+    <link name="Body">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="lf_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="Body"/>
+        <child link="lf_wheel"/>
+    </joint>
+
+    <link name="lf_wheel">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0.25 -0.225 0.135"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="rf_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="Body"/>
+        <child link="rf_wheel"/>
+    </joint>
+
+    <link name="rf_wheel">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="-0.25 -0.225 0.135"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="lr_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="Body"/>
+        <child link="lr_wheel"/>
+    </joint>
+
+    <link name="lr_wheel">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0.25 0.225 0.135"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="rr_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="Body"/>
+        <child link="rr_wheel"/>
+    </joint>
+
+    <link name="rr_wheel">
+        <visual>
+            <origin rpy="0.0 0 0" xyz="-0.25 0.225 0.135"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+    </link>
+</robot>

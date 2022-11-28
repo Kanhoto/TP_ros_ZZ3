@@ -1,0 +1,8 @@
+prefix=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/devel
+
+Name: e4_gazebo
+Description: Description of e4_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

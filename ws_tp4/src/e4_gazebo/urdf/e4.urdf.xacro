@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<robot name="$(arg robot_name)" xmlns:xacro="http://ros.org/wiki/xacro">
+    <!-- Params XACRO -->
+    <xacro:property name="width" value="0.5" />
+    <xacro:property name="bodylen" value="0.45" />
+    <xacro:property name="wheeldiam" value="0.27" />
+
+    <!-- corps du robot -->
+    <link name="Body">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- roue avant gauche -->
+    <joint name="lf_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="Body"/>
+        <child link="lf_wheel"/>
+    </joint>
+
+    <!-- jointure roue avant gauche corps -->
+    <link name="lf_wheel">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="${width/2} ${-bodylen/2} ${wheeldiam/2}"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- roue avant droite -->
+    <joint name="rf_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="${-width/2} ${-bodylen/2} ${wheeldiam/2}"/>
+        <parent link="Body"/>
+        <child link="rf_wheel"/>
+    </joint>
+
+    <!-- jointure roue avant droite corps -->
+    <link name="rf_wheel">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- roue arrière gauche -->
+    <joint name="lr_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="${width/2} ${bodylen/2} ${wheeldiam/2}"/>
+        <parent link="Body"/>
+        <child link="lr_wheel"/>
+    </joint>
+
+    <!-- jointure roue arrière gauche corps -->
+    <link name="lr_wheel">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- roue arrière droite -->
+    <joint name="rr_wheel_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="${-width/2} ${bodylen/2} ${wheeldiam/2}"/>
+        <parent link="Body"/>
+        <child link="rr_wheel"/>
+    </joint>
+
+    <!-- jointure roue arrière droite corps -->
+    <link name="rr_wheel">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="1"/>
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/wheel.dae"/>
+            </geometry>
+        </visual>
+        <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+            <origin rpy="0.0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://e4_gazebo/meshes/e4_body.dae"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
