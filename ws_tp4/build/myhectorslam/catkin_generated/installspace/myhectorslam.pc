@@ -1,0 +1,8 @@
+prefix=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/install
+
+Name: myhectorslam
+Description: Description of myhectorslam
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -135,7 +135,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/build/e4_gazebo/cmake_install.cmake")
+  include("/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/build/myhectorslam/cmake_install.cmake")
 
 endif()
 

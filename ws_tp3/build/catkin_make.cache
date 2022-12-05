@@ -1,0 +1,2 @@
+e4_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/devel -DCMAKE_INSTALL_PREFIX=/home/local.isima.fr/vicanhotod/TP_ros_ZZ3/ws_tp4/install -G Unix Makefiles

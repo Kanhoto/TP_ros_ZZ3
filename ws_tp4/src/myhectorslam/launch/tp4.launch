@@ -1,0 +1,35 @@
+<launch>
+    <arg name=”base_frame” default=”base_frame”/>
+    <arg name=”odom_frame” default=”base_frame”/>
+    <param name="/use_sim_time" value="true"/>
+    <!-- rosbag with config -->
+    <node pkg="rosbag" type="play" name="rosbag" args="--clock $(find myhectorslam)/bag/wireFence.bag"/>
+
+    <!-- Rviz with config -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find myhectorslam)/rviz/config.rviz" />
+    
+    <!-- Remap -->
+    <!--<remap from="/effibote4/odometry" to="/mixTopics" />
+    <remap from="/scan" to="/mixTopics" />
+    <remap from="/tf" to="/mixTopics" />
+    <remap from="/usbcam/image_raw/compressed" to="/mixTopics" />-->
+</launch>
+
+<!-- Topic names -->
+<!-- topics: /cmd_vel                        1658 msgs    : geometry_msgs/Twist        
+             /effibote4/odometry             1135 msgs    : nav_msgs/Odometry          
+             /scan                           1419 msgs    : sensor_msgs/LaserScan      
+             /tf                             1096 msgs    : tf2_msgs/TFMessage         
+             /usb_cam/image_raw/compressed   1688 msgs    : sensor_msgs/CompressedImage-->
+
+<!-- Topic frequency -->
+<!--    /effibote4/odometry          : average of 20hz
+        /scan                        : average of 25hz
+        /tf                          : average of 20hz
+        /usbcam/image_raw/compressed : average of 29hz-->
+
+<!-- Bag duration -->
+<!-- 56.8s -->
+
+<!-- Creation day -->
+<!-- Jan 19 2021 16:42:29.29 (1611070949.29) -->
